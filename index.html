@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>영화 개봉 알람</title>
+    <link rel="icon" href="./favicon.ico?v=2" sizes="any" />
+    <link rel="shortcut icon" href="./favicon.ico?v=2" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">TMDB Release Calendar</p>
+          <h1>영화 개봉 알람</h1>
+          <p class="hero-copy">
+            월별 개봉 일정을 확인하고 원하는 날짜의 영화를 알림으로 받아보세요.
+          </p>
+        </div>
+        <div class="hero-note">
+          <strong>알림 안내</strong>
+          <p>영화 개봉일 10시 알람메세지가 전송됩니다.</p>
+        </div>
+      </header>
+
+      <section id="dashboard" class="dashboard">
+        <div class="panel calendar-panel">
+          <div class="panel-header inline-header">
+            <div>
+              <h2>월별 개봉 달력</h2>
+              <p>개봉일 기준으로 영화를 달력에 표시하며, 날짜를 클릭하면 팝업으로 상세 목록을 확인합니다.</p>
+            </div>
+            <div class="month-controls">
+              <span id="connection-status" class="connection-status">TMDB 연동 확인 중</span>
+              <button id="prev-month-button" type="button" class="button subtle">이전 달</button>
+              <strong id="month-label"></strong>
+              <button id="next-month-button" type="button" class="button subtle">다음 달</button>
+            </div>
+          </div>
+
+          <div id="calendar-status" class="status-line"></div>
+          <div id="calendar-grid" class="calendar-grid"></div>
+        </div>
+      </section>
+
+      <aside id="movie-popup" class="movie-popup hidden" aria-live="polite">
+        <div class="panel movie-popup-panel">
+          <div class="panel-header popup-actions">
+            <button id="close-popup-button" type="button" class="button subtle">닫기</button>
+          </div>
+          <div id="movie-list" class="movie-list empty-state">
+            달력에서 날짜를 선택하면 영화 목록이 표시됩니다.
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <script defer src="./js/utils.js"></script>
+    <script defer src="./js/movieapi.js"></script>
+    <script defer src="./js/calendar.js"></script>
+    <script defer src="./js/app.js"></script>
+  </body>
+</html>
